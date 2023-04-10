@@ -15,6 +15,10 @@ build:
 publish-test: build
 	python3 -m twine upload --repository testpypi dist/*
 
+.PHONY: publish
+publish: build
+	python3 -m twine upload dist/*
+
 .PHONY: venv-test
 venv-test:
 	python3 -m venv .venv-test
