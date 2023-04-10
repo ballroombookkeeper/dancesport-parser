@@ -1,0 +1,29 @@
+[project]
+name = "dancesport_parser"
+version = "0.0.4"
+authors = [
+  { name="Eric Lam", email="eric@ericblam.com" },
+]
+description = "Parsing library for dancesport information"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+dynamic = ["dependencies"]
+
+[project.urls]
+"Homepage" = "https://github.com/ballroombookkeeper/dancesport-parser"
+"Bug Tracker" = "https://github.com/ballroombookkeeper/dancesport-parser/issues"
+
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
