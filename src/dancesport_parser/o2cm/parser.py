@@ -1,11 +1,16 @@
 import datetime
 import re
+from os import path
 from typing import List
 
 from bs4 import BeautifulSoup
 
 from dancesport_parser.util import parseHtml
 from dancesport_parser.o2cm.model import Competition
+
+
+RESULTS_MAIN_DOMAIN = "https://results.o2cm.com/"
+
 
 def parseMain(htmlDOM: BeautifulSoup = None, rawHtml: str = None) -> List[Competition]:
     """Parse o2cm main results screen, i.e. results.o2cm.com.
@@ -39,6 +44,6 @@ def parseMain(htmlDOM: BeautifulSoup = None, rawHtml: str = None) -> List[Compet
             compId = matchCompUrl.group(1).lower()
             fullDate = date + " " + str(year)
             compDate = datetime.datetime.strptime(fullDate, "%b %d %Y").date()
-            competition = Competition(compId, compName, compDate)
+            competition = Competition(compId, compName, compDate, path.join(RESULTS_MAIN_DOMAIN, compUrl))
             results.append(competition)
     return results

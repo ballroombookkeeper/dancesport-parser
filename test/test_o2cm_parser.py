@@ -72,6 +72,8 @@ def o2cm_parser_assertion_helper(results: List[Competition]) -> None:
     assert results[0].id == "bcb23"
     assert results[0].date == date(2023, 4, 8)
     assert results[0].name == "Berkeley Classic Ballroom Competition"
+    assert results[0].url == "https://results.o2cm.com/event3.asp?event=bcb23&bclr=#FFFFFF&tclr=#000000"
     assert results[1].id == "big22"
     assert results[1].date == date(2022, 12, 10)
     assert results[1].name == "Big Apple Dancesport Challenge"
+    assert results[1].url == "https://results.o2cm.com/event3.asp?event=big22&bclr=#FFFFFF&tclr=#000000"

@@ -6,3 +6,4 @@ class Competition:
     id: str
     name: str
     date: date
+    url: str
