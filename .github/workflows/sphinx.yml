@@ -12,7 +12,8 @@ jobs:
 
     - name: Build API Docs
       run: |
-        pip install sphinx sphinx-autodoc-typehints
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
         sphinx-apidoc -o docs/source/ src/dancesport_parser
         sphinx-build -b html docs/source/ docs
 
