@@ -15,9 +15,9 @@ RESULTS_MAIN_DOMAIN = "https://results.o2cm.com/"
 def parseMain(htmlDOM: BeautifulSoup = None, rawHtml: str = None) -> List[Competition]:
     """Parse o2cm main results screen, i.e. results.o2cm.com.
     
-    Keyword arguments:
-    htmlDOM -- HTML contents to parse.
-    rawHtml -- If `htmlDOM` is unspecified, raw string to directly parse.
+    :param htmlDOM: HTML contents to parse.
+    :param rawHtml: If `htmlDOM` is unspecified, raw string to directly parse.
+    :return: List of Competitions parsed from HTML
     """
     if htmlDOM is None and rawHtml is None:
         raise RuntimeError("Expected either htmlDOM or rawHtml to be provided.")
