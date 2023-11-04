@@ -1,4 +1,0 @@
-pytest
-sphinx
-sphinx-autodoc-typehints
-wheel
